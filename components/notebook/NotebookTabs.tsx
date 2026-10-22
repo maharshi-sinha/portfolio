@@ -61,9 +61,9 @@ export function NotebookTabs({ onOpenScratchpad }: NotebookTabsProps) {
       aria-label="Notebook tabs"
       className="sticky top-0 z-40 bg-paper-ivory/95 dark:bg-paper-dark/95 backdrop-blur-md border-b border-ink-border dark:border-paper-dark-border"
     >
-      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 flex items-center justify-between py-1 sm:py-2">
-        {/* Index Tabs - Smooth scrolling */}
-        <div className="flex-1 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth pr-2.5">
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 flex items-center justify-between py-1 sm:py-2 gap-2">
+        {/* Index Tabs - Smooth scrolling without visible scrollbar */}
+        <div className="flex-1 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
           {TABS.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -92,7 +92,7 @@ export function NotebookTabs({ onOpenScratchpad }: NotebookTabsProps) {
         </div>
 
         {/* Quick Actions: Pinned & always accessible */}
-        <div className="pl-2 sm:pl-3 flex items-center gap-1.5 sm:gap-2 shrink-0 border-l border-ink-border/50 dark:border-paper-dark-border/60 bg-paper-ivory/95 dark:bg-paper-dark/95">
+        <div className="pl-1 sm:pl-2 flex items-center gap-1.5 sm:gap-2 shrink-0">
           <ThemeToggle />
           <button
             type="button"
