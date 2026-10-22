@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper-bg: #F9F8F5;
+  --paper-card: #FFFFFF;
+  --paper-subtle: #F0EEE7;
+  --paper-line: rgba(0, 0, 0, 0.08);
+  --paper-dot: rgba(0, 0, 0, 0.13);
+  --margin-line: rgba(225, 29, 72, 0.35);
+  --margin-line-neutral: rgba(0, 0, 0, 0.16);
+  --ink-primary: #121214;
+  --ink-secondary: #3D3D42;
+  --ink-muted: #65656B;
+  --ink-faint: #98989E;
+  --ink-border: #CEC9BF;
+  --spine-color: #BFB9AC;
+}
+
+.dark {
+  --paper-bg: #111214;
+  --paper-card: #18191C;
+  --paper-subtle: #202226;
+  --paper-line: rgba(255, 255, 255, 0.035);
+  --paper-dot: rgba(255, 255, 255, 0.06);
+  --margin-line: rgba(244, 63, 94, 0.15);
+  --margin-line-neutral: rgba(255, 255, 255, 0.08);
+  --ink-primary: #F4F4F5;
+  --ink-secondary: #D4D4D8;
+  --ink-muted: #9E9EA4;
+  --ink-faint: #5E6068;
+  --ink-border: #2A2D33;
+  --spine-color: #26282E;
+}
+
+body {
+  background-color: var(--paper-bg);
+  color: var(--ink-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #18181B;
+  color: #FAFAFA;
+}
+
+.dark ::selection {
+  background-color: #FAFAFA;
+  color: #18181B;
+}
+
+/* Notebook Ruled Line Pattern */
+.bg-notebook-ruled {
+  background-size: 100% 32px;
+  background-image: linear-gradient(to bottom, var(--paper-line) 1px, transparent 1px);
+}
+
+/* Notebook Dot Grid Pattern */
+.bg-notebook-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(var(--paper-dot) 1px, transparent 1px);
+}
+
+/* Notebook Engineering Grid Pattern */
+.bg-notebook-grid {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, var(--paper-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--paper-line) 1px, transparent 1px);
+}
+
+/* Notebook Spiral Binding Rings Effect */
+.notebook-spiral-ring {
+  position: relative;
+}
+.notebook-spiral-ring::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #A8A29E 0%, #78716C 50%, #44403C 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+}
+
+/* Washi Tape / Tape Detail - Yellow masking tape in both light & dark mode */
+.washi-tape {
+  background: rgba(254, 240, 138, 0.85); /* Warm yellow masking tape */
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(180, 83, 9, 0.35);
+  border-right: 2px dashed rgba(180, 83, 9, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.dark .washi-tape {
+  background: rgba(250, 204, 21, 0.75); /* Rich yellow masking tape preserved in dark mode */
+  backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(217, 119, 6, 0.45);
+  border-right: 2px dashed rgba(217, 119, 6, 0.45);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* Rubber Stamp Styling */
+.stamp-border {
+  border: 1.5px solid currentColor;
+  position: relative;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.stamp-border::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 0.5px dashed currentColor;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Perforated Edge */
+.perforated-edge {
+  background-image: radial-gradient(circle, var(--paper-bg) 3px, transparent 3.5px);
+  background-size: 14px 14px;
+}
+
+/* Subtle handwriting font class */
+.font-handwritten {
+  font-family: Caveat, "Shadows Into Light", cursive;
+}
+
+/* Custom Minimalist Ink Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}
