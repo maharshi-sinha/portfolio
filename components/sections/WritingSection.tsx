@@ -3,9 +3,9 @@ import { BookOpen, ExternalLink, Clock, Newspaper } from "lucide-react";
 
 export function WritingSection() {
   return (
-    <section id="writing" className="relative py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
+    <section id="writing" className="relative py-12 sm:py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
       {/* Notebook Section Header & Page Marker */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint gap-1.5 sm:gap-2">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-ink-primary dark:text-ink-white">[ SECTION 05 ]</span>
           <span>// WRITINGS &amp; TECHNICAL DISPATCHES</span>
@@ -17,15 +17,15 @@ export function WritingSection() {
         </div>
       </div>
 
-      <div className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-5 sm:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {portfolioData.articles.map((article) => (
             <a
               key={article.id}
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-6 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200 shadow-xs flex flex-col justify-between"
+              className="group p-4 sm:p-6 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200 shadow-xs flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-ink-muted dark:text-ink-faint pb-3 border-b border-dashed border-ink-border/50 dark:border-paper-dark-border/50">

@@ -202,29 +202,29 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-2xl bg-white dark:bg-[#16171A] border-2 border-stone-300 dark:border-stone-700 rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] ring-1 ring-black/10 dark:ring-white/5">
+      <div className="relative w-full max-w-2xl bg-white dark:bg-[#16171A] border-2 border-stone-300 dark:border-stone-700 rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[94vh] ring-1 ring-black/10 dark:ring-white/5">
         {/* Notebook Tape accent */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 washi-tape -mt-2 z-20 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 sm:w-28 h-4 sm:h-5 washi-tape -mt-2 z-20 pointer-events-none" />
 
         {/* Modal Header */}
-        <div className="relative z-10 flex items-center justify-between px-5 py-4 border-b border-ink-border dark:border-paper-dark-border bg-[#F5F3EC] dark:bg-[#1E2025] shadow-xs">
+        <div className="relative z-10 flex items-center justify-between px-3.5 sm:px-5 py-3 sm:py-4 border-b border-ink-border dark:border-paper-dark-border bg-[#F5F3EC] dark:bg-[#1E2025] shadow-xs">
           <div>
-            <h3 className="font-serif italic text-lg sm:text-xl text-ink-primary dark:text-ink-white flex items-center gap-2">
+            <h3 className="font-serif italic text-base sm:text-xl text-ink-primary dark:text-ink-white flex items-center gap-1.5 sm:gap-2">
               <span>Visitor&apos;s Scratchpad</span>
-              <span className="text-xs font-mono font-normal not-italic px-2 py-0.5 border border-dashed rounded text-ink-muted">
+              <span className="text-[10px] sm:text-xs font-mono font-normal not-italic px-1.5 py-0.5 border border-dashed rounded text-ink-muted">
                 p. 99
               </span>
             </h3>
-            <p className="text-xs font-mono text-ink-muted dark:text-ink-faint">
-              Scribble a signature, leave a note, or sketch something cool!
+            <p className="text-[11px] sm:text-xs font-mono text-ink-muted dark:text-ink-faint">
+              Scribble a signature, leave a note, or sketch!
             </p>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-md hover:bg-stone-200/80 dark:hover:bg-stone-800 text-ink-muted hover:text-ink-primary dark:hover:text-ink-white transition-colors"
+            className="p-1 sm:p-1.5 rounded-md hover:bg-stone-200/80 dark:hover:bg-stone-800 text-ink-muted hover:text-ink-primary dark:hover:text-ink-white transition-colors"
             title="Close"
           >
             <X className="w-5 h-5" />
@@ -232,7 +232,7 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
         </div>
 
         {/* Canvas Area */}
-        <div className="relative flex-1 min-h-[320px] sm:min-h-[400px] bg-white dark:bg-[#131417] bg-notebook-dots cursor-crosshair overflow-hidden touch-none">
+        <div className="relative flex-1 min-h-[260px] sm:min-h-[400px] bg-white dark:bg-[#131417] bg-notebook-dots cursor-crosshair overflow-hidden touch-none">
           <canvas
             ref={canvasRef}
             className="w-full h-full block"
@@ -244,16 +244,16 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
             onTouchMove={draw}
             onTouchEnd={stopDrawing}
           />
-          <div className="absolute bottom-3 right-4 pointer-events-none select-none text-[11px] font-mono text-ink-faint opacity-50">
+          <div className="absolute bottom-2 sm:bottom-3 right-3 sm:right-4 pointer-events-none select-none text-[10px] sm:text-[11px] font-mono text-ink-faint opacity-50">
             Pen tool active • Canvas reactive
           </div>
         </div>
 
         {/* Modal Footer / Tool Controls */}
-        <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 border-t border-ink-border dark:border-paper-dark-border bg-[#F5F3EC] dark:bg-[#1E2025] shadow-xs">
+        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3.5 border-t border-ink-border dark:border-paper-dark-border bg-[#F5F3EC] dark:bg-[#1E2025] shadow-xs">
           {/* Pen / Color Selection */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-mono text-ink-muted mr-1">INK:</span>
+          <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start w-full sm:w-auto">
+            <span className="text-xs font-mono text-ink-muted mr-0.5 sm:mr-1">INK:</span>
             {(isDarkMode ? DARK_PALETTE : LIGHT_PALETTE).map((c) => (
               <button
                 key={c.color}
@@ -276,7 +276,7 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
             {/* Eraser */}
             <button
               onClick={() => setIsEraser(!isEraser)}
-              className={`px-2.5 py-1.5 rounded text-xs font-mono flex items-center gap-1.5 border transition-all ${
+              className={`px-2.5 py-1 sm:py-1.5 rounded text-xs font-mono flex items-center gap-1.5 border transition-all ${
                 isEraser
                   ? "bg-ink-primary text-white dark:bg-white dark:text-ink-primary border-transparent shadow-xs font-medium scale-105"
                   : "border-stone-300 dark:border-stone-700 bg-paper-subtle/50 dark:bg-stone-800 text-ink-muted hover:text-ink-primary dark:hover:text-ink-white"
@@ -289,7 +289,7 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 justify-end w-full sm:w-auto">
             <button
               onClick={clearCanvas}
               className="px-2.5 py-1.5 text-xs font-mono border border-ink-border dark:border-paper-dark-border rounded hover:bg-paper-subtle dark:hover:bg-paper-dark-subtle text-ink-muted hover:text-ink-primary transition-colors flex items-center gap-1.5"
@@ -301,7 +301,7 @@ export function ScratchpadModal({ isOpen, onClose }: ScratchpadModalProps) {
 
             <button
               onClick={downloadDrawing}
-              className="px-3.5 py-1.5 text-xs font-mono font-medium bg-ink-primary dark:bg-ink-white text-white dark:text-ink-primary rounded hover:opacity-90 transition-opacity flex items-center gap-1.5 shadow-sm"
+              className="flex-1 sm:flex-initial px-3.5 py-1.5 text-xs font-mono font-medium bg-ink-primary dark:bg-ink-white text-white dark:text-ink-primary rounded hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 shadow-sm"
             >
               {savedSuccess ? (
                 <>

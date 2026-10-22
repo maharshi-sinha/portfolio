@@ -58,9 +58,9 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-16">
+    <section id="contact" className="relative py-12 sm:py-16">
       {/* Notebook Section Header & Page Marker */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint gap-1.5 sm:gap-2">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-ink-primary dark:text-ink-white">[ SECTION 06 ]</span>
           <span>// DISPATCH STATION &amp; CONTACT</span>
@@ -72,13 +72,13 @@ export function ContactSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         {/* Left Column: Dispatch Form */}
-        <div className="lg:col-span-7 space-y-6">
-          <div className="p-6 sm:p-7 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs">
-            <div className="pb-4 border-b border-dashed border-ink-border/60 dark:border-paper-dark-border/60 flex items-center justify-between">
+        <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+          <div className="p-4 sm:p-7 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs">
+            <div className="pb-3 sm:pb-4 border-b border-dashed border-ink-border/60 dark:border-paper-dark-border/60 flex items-center justify-between gap-3">
               <div>
-                <h3 className="font-display text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white">
+                <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white">
                   Send a Dispatch
                 </h3>
                 <p className="text-xs font-mono text-ink-muted dark:text-ink-faint mt-0.5">
@@ -86,7 +86,7 @@ export function ContactSection() {
                 </p>
               </div>
 
-              <StampBadge variant="red" rotation="right" size="sm">
+              <StampBadge variant="red" rotation="none" size="sm">
                 INBOX ACTIVE
               </StampBadge>
             </div>
@@ -135,10 +135,10 @@ export function ContactSection() {
                 />
               </div>
 
-              <div className="flex items-center justify-between pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded text-xs font-mono font-medium bg-ink-primary dark:bg-ink-white text-white dark:text-ink-primary hover:opacity-90 transition-opacity shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded text-xs font-mono font-medium bg-ink-primary dark:bg-ink-white text-white dark:text-ink-primary hover:opacity-90 transition-opacity shadow-sm"
                 >
                   {sent ? (
                     <>
@@ -153,7 +153,7 @@ export function ContactSection() {
                   )}
                 </button>
 
-                <span className="text-[11px] font-mono text-ink-muted">
+                <span className="text-[11px] font-mono text-ink-muted text-center sm:text-right">
                   Replies typically within 24h
                 </span>
               </div>
@@ -162,9 +162,9 @@ export function ContactSection() {
         </div>
 
         {/* Right Column: Direct Connections & Sticky Note */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-5 sm:space-y-6">
           {/* Direct Email Card */}
-          <div className="p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3">
+          <div className="p-4 sm:p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3">
             <span className="text-[10px] font-mono uppercase tracking-wider text-ink-muted block">
               DIRECT INBOX
             </span>
@@ -188,7 +188,7 @@ export function ContactSection() {
           </div>
 
           {/* Social Profiles Grid */}
-          <div className="p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3">
+          <div className="p-4 sm:p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3">
             <span className="text-[10px] font-mono uppercase tracking-wider text-ink-muted block">
               DIGITAL FOOTPRINT
             </span>

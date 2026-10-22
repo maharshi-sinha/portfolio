@@ -16,8 +16,8 @@ export function StickyNote({
   className,
 }: StickyNoteProps) {
   const rotationStyles = {
-    left: "-rotate-1 hover:-rotate-0",
-    right: "rotate-1.5 hover:rotate-0",
+    left: "rotate-0 sm:-rotate-1 sm:hover:-rotate-0",
+    right: "rotate-0 sm:rotate-1.5 sm:hover:rotate-0",
     straight: "rotate-0",
   };
 

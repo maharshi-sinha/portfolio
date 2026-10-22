@@ -4,9 +4,9 @@ import { StampBadge } from "@/components/notebook/StampBadge";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="relative py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
+    <section id="experience" className="relative py-12 sm:py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
       {/* Notebook Section Header & Page Marker */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint gap-1.5 sm:gap-2">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-ink-primary dark:text-ink-white">[ SECTION 02 ]</span>
           <span>// CHRONOLOGICAL EXPERIENCE LOG</span>
@@ -18,17 +18,17 @@ export function ExperienceSection() {
         </div>
       </div>
 
-      <div className="space-y-10">
+      <div className="space-y-6 sm:space-y-10">
         {portfolioData.experiences.map((exp, index) => (
           <div
             key={exp.id}
-            className="group relative p-6 sm:p-7 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200"
+            className="group relative p-4 sm:p-7 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200"
           >
             {/* Header / Company & Role */}
-            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-dashed border-ink-border/60 dark:border-paper-dark-border/60">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 sm:pb-4 border-b border-dashed border-ink-border/60 dark:border-paper-dark-border/60">
               <div>
-                <div className="flex items-center gap-2.5 flex-wrap">
-                  <h3 className="font-display text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white">
+                <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap">
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white">
                     {exp.role}
                   </h3>
                   {exp.badge && (
@@ -38,7 +38,7 @@ export function ExperienceSection() {
                   )}
                 </div>
 
-                <div className="mt-1 flex items-center gap-2 text-sm font-mono text-ink-secondary dark:text-ink-white-muted flex-wrap">
+                <div className="mt-1 flex items-center gap-2 text-xs sm:text-sm font-mono text-ink-secondary dark:text-ink-white-muted flex-wrap">
                   <a
                     href={exp.companyUrl}
                     target="_blank"
@@ -54,7 +54,7 @@ export function ExperienceSection() {
               </div>
 
               {/* Timeframe & Location */}
-              <div className="sm:text-right font-mono text-xs text-ink-muted dark:text-ink-faint space-y-1">
+              <div className="sm:text-right font-mono text-xs text-ink-muted dark:text-ink-faint space-y-1 self-start sm:self-auto">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-paper-subtle dark:bg-paper-dark-subtle border border-ink-border/50 dark:border-paper-dark-border/50">
                   <Calendar className="w-3.5 h-3.5" />
                   <span>{exp.period}</span>

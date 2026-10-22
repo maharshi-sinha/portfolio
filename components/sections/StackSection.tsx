@@ -46,12 +46,12 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 
 export function StackSection() {
   return (
-    <section id="stack" className="relative py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
+    <section id="stack" className="relative py-12 sm:py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
       {/* Notebook Section Header & Page Marker */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint gap-1.5 sm:gap-2">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-ink-primary dark:text-ink-white">[ SECTION 04 ]</span>
-          <span>// TECHNICAL WORKBENCH & CRAFT</span>
+          <span>// TECHNICAL WORKBENCH &amp; CRAFT</span>
         </div>
         <div className="flex items-center gap-2">
           <span>PAGE 04</span>
@@ -60,14 +60,14 @@ export function StackSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         {/* Left Column: Stack Categories */}
-        <div className="lg:col-span-8 space-y-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="lg:col-span-8 space-y-5 sm:space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {portfolioData.techCategories.map((category) => (
               <div
                 key={category.title}
-                className="p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3"
+                className="p-4 sm:p-5 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border shadow-xs space-y-3"
               >
                 <div className="pb-2 border-b border-dashed border-ink-border/60 dark:border-paper-dark-border/60">
                   <h3 className="font-display text-lg font-semibold tracking-tight text-ink-primary dark:text-ink-white">

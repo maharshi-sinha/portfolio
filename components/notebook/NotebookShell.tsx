@@ -34,7 +34,7 @@ export function NotebookShell({ children }: NotebookShellProps) {
       <NotebookTabs onOpenScratchpad={() => setScratchpadOpen(true)} />
 
       {/* Main Notebook Body Layout */}
-      <main className="relative flex-1 max-w-6xl w-full mx-auto px-4 sm:px-8 py-8 md:py-12">
+      <main className="relative flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 md:px-8 py-4 sm:py-8 md:py-12">
         {/* Notebook Cover Border & Layered Paper Effect */}
         <div className="relative bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border rounded-lg shadow-notebook dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden transition-all duration-300">
           
@@ -55,18 +55,18 @@ export function NotebookShell({ children }: NotebookShellProps) {
           <div className="hidden sm:block absolute left-12 lg:left-20 top-0 bottom-0 w-px bg-red-500/35 dark:bg-red-500/25 pointer-events-none z-10" />
 
           {/* Main Content Area */}
-          <div className="relative sm:pl-16 lg:pl-28 pr-4 sm:pr-8 md:pr-12 py-8 sm:py-12">
+          <div className="relative px-3 sm:px-0 sm:pl-16 lg:pl-28 sm:pr-8 md:pr-12 py-6 sm:py-12">
             {children}
           </div>
 
           {/* Bottom Notebook Page Edge Footer */}
-          <footer className="relative border-t border-ink-border dark:border-paper-dark-border bg-paper-subtle/40 dark:bg-paper-dark-subtle/30 px-6 sm:px-10 py-5 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-ink-muted dark:text-ink-faint">
-            <div className="flex items-center gap-3 flex-wrap">
+          <footer className="relative border-t border-ink-border dark:border-paper-dark-border bg-paper-subtle/40 dark:bg-paper-dark-subtle/30 px-4 sm:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-ink-muted dark:text-ink-faint">
+            <div className="flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 flex-wrap text-center sm:text-left">
               <span>© {new Date().getFullYear()} Maharshi Sinha</span>
               <span className="opacity-40">•</span>
               <span>Software Development Engineer</span>
-              <span className="opacity-40">•</span>
-              <span className="font-handwritten text-sm text-ink-secondary dark:text-ink-white-muted">
+              <span className="hidden md:inline opacity-40">•</span>
+              <span className="font-handwritten text-sm text-ink-secondary dark:text-ink-white-muted block sm:inline w-full sm:w-auto">
                 Handcrafted with Next.js & TypeScript
               </span>
             </div>

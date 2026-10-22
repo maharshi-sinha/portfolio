@@ -16,12 +16,12 @@ export function ProjectsSection() {
   });
 
   return (
-    <section id="projects" className="relative py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
+    <section id="projects" className="relative py-12 sm:py-16 border-b border-ink-border/80 dark:border-paper-dark-border/80">
       {/* Notebook Section Header & Page Marker */}
-      <div className="flex items-center justify-between pb-6 mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 sm:pb-6 mb-6 sm:mb-8 border-b border-dashed border-ink-border dark:border-paper-dark-border text-xs font-mono text-ink-muted dark:text-ink-faint gap-1.5 sm:gap-2">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-ink-primary dark:text-ink-white">[ SECTION 03 ]</span>
-          <span>// ENGINEERING BLUEPRINTS & PROJECTS</span>
+          <span>// ENGINEERING BLUEPRINTS &amp; PROJECTS</span>
         </div>
         <div className="flex items-center gap-2">
           <span>PAGE 03</span>
@@ -31,8 +31,8 @@ export function ProjectsSection() {
       </div>
 
       {/* Category Filter Tabs */}
-      <div className="flex items-center gap-2 mb-8 overflow-x-auto no-scrollbar pb-2">
-        <span className="text-xs font-mono text-ink-muted mr-1">FILTER:</span>
+      <div className="flex items-center gap-1.5 sm:gap-2 mb-6 sm:mb-8 overflow-x-auto no-scrollbar pb-1.5">
+        <span className="text-[11px] sm:text-xs font-mono text-ink-muted mr-1 shrink-0">FILTER:</span>
         {[
           { key: "all", label: "All Works" },
           { key: "mobile", label: "Mobile (Flutter / iOS)" },
@@ -43,7 +43,7 @@ export function ProjectsSection() {
             key={tab.key}
             onClick={() => setActiveFilter(tab.key as FilterCategory)}
             className={cn(
-              "px-3 py-1 rounded text-xs font-mono transition-all duration-200 border whitespace-nowrap",
+              "px-2.5 sm:px-3 py-1 rounded text-xs font-mono transition-all duration-200 border whitespace-nowrap shrink-0",
               activeFilter === tab.key
                 ? "bg-ink-primary dark:bg-ink-white text-white dark:text-ink-primary border-transparent font-medium shadow-xs"
                 : "bg-paper-card dark:bg-paper-dark-elevated text-ink-secondary dark:text-ink-white-muted border-ink-border dark:border-paper-dark-border hover:border-ink-muted"
@@ -55,24 +55,24 @@ export function ProjectsSection() {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="group relative flex flex-col justify-between p-6 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200 shadow-xs hover:shadow-notebook"
+            className="group relative flex flex-col justify-between p-4 sm:p-6 rounded-md bg-paper-card dark:bg-paper-dark-elevated border border-ink-border dark:border-paper-dark-border hover:border-ink-muted dark:hover:border-paper-dark-border/80 transition-all duration-200 shadow-xs hover:shadow-notebook"
           >
             {/* Blueprint Header */}
             <div>
               <div className="flex items-start justify-between gap-2 pb-3 border-b border-dashed border-ink-border/50 dark:border-paper-dark-border/50">
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-ink-muted dark:text-ink-faint">
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-ink-muted dark:text-ink-faint">
                     {project.categoryLabel}
                   </span>
-                  <h3 className="font-display text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white mt-0.5">
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-ink-primary dark:text-ink-white mt-0.5">
                     {project.title}
                   </h3>
                 </div>
-                <span className="font-mono text-xs px-1.5 py-0.5 rounded border border-ink-border/50 dark:border-paper-dark-border/50 text-ink-muted">
+                <span className="font-mono text-xs px-1.5 py-0.5 rounded border border-ink-border/50 dark:border-paper-dark-border/50 text-ink-muted shrink-0">
                   {project.pageNumber}
                 </span>
               </div>
