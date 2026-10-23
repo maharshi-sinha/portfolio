@@ -138,7 +138,7 @@ export const portfolioData = {
       companyUrl: "https://cohesyn.com",
       role: "Mobile App Developer",
       employmentType: "Full-time",
-      period: "Mar 2025 — Jun 2026 · 1 yr 4 mos",
+      period: "Mar 2025 — May 2026 · 1 yr 4 mos",
       location: "Hybrid",
       description: "Engineered AI-powered medical communication mobile platform streamlining multilingual patient-doctor interactions across language barriers.",
       bulletPoints: [
